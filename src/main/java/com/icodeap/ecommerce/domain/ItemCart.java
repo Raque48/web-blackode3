@@ -11,10 +11,14 @@ import java.math.BigDecimal;
 @ToString
 public class ItemCart {
     private Integer idProduct;
+    //nombre
     private String nameProduct;
+    //cantidad
     private Integer quantity;
+    //precio
     private BigDecimal price;
 
+    //precio de un item paso un entero lo casteo con con quantiti valor total
     public BigDecimal getTotalPriceItem(){
         return price.multiply(BigDecimal.valueOf(quantity));
     }
@@ -51,7 +55,7 @@ public class ItemCart {
 		this.price = price;
 	}
 
-	public ItemCart(Integer idProduct,String nameProduct,Integer quantity,BigDecimal price) {
+	public void Inicializar(Integer idProduct,String nameProduct,Integer quantity,BigDecimal price) {
 		this.idProduct=idProduct;
 		this.nameProduct=nameProduct;
 		this.price=price;
