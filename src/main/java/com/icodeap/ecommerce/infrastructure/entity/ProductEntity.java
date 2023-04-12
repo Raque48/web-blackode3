@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 
 
 @Entity
-@Table(name = "products")
+@Table(name = "railway.products")
 @Data
 @NoArgsConstructor
 public class ProductEntity {
