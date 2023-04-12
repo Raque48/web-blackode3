@@ -21,8 +21,7 @@ public class User {
     private String password;
     private UserType userType;
     private LocalDateTime dateCreated;
-	
-    public Integer getId() {
+	public Integer getId() {
 		return id;
 	}
 	public void setId(Integer id) {
@@ -88,9 +87,9 @@ public class User {
 				+ ", email=" + email + ", address=" + address + ", cellphone=" + cellphone + ", password=" + password
 				+ ", userType=" + userType + ", dateCreated=" + dateCreated + "]";
 	}
-	public User(Integer id, String username, String firstName, String lastName, String email, String address,
+	public void Inicializar(Integer id, String username, String firstName, String lastName, String email, String address,
 			String cellphone, String password, UserType userType, LocalDateTime dateCreated) {
-		super();
+		
 		this.id = id;
 		this.username = username;
 		this.firstName = firstName;
