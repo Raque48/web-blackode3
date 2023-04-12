@@ -101,10 +101,6 @@ public class User {
 		this.userType = userType;
 		this.dateCreated = dateCreated;
 	}
-    
-	public User() {
-		
-	}
  
 
 }
