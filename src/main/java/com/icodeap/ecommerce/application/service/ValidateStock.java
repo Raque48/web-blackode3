@@ -5,6 +5,9 @@ import com.icodeap.ecommerce.domain.Stock;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class ValidateStock {
     private final StockService stockService;
 

@@ -2,7 +2,9 @@ package com.icodeap.ecommerce.application.service;
 
 import com.icodeap.ecommerce.domain.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 
+@Service
 public class RegistrationService {
 
     private final UserService userService;

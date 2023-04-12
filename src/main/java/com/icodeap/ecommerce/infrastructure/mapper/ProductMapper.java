@@ -1,12 +1,15 @@
 package com.icodeap.ecommerce.infrastructure.mapper;
 
-import com.icodeap.ecommerce.domain.Product;
-import com.icodeap.ecommerce.infrastructure.entity.ProductEntity;
+import java.util.ArrayList;
+
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
-import java.util.ArrayList;
+
+import com.icodeap.ecommerce.domain.Product;
+import com.icodeap.ecommerce.infrastructure.entity.ProductEntity;
+
 
 @Mapper(componentModel = "spring", uses = {UserMapper.class})
 public interface ProductMapper {

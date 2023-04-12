@@ -19,6 +19,6 @@ public class LogoutController {
     @GetMapping
     public String logout(HttpSession httpSession){
         logoutService.logout(httpSession);
-        return "redirect:/home";
+        return "redirect:/";
     }
 }

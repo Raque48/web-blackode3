@@ -15,7 +15,8 @@ public class Stock {
     private String description;
     private Integer balance;
     private Product product;
-	public Integer getId() {
+	
+    public Integer getId() {
 		return id;
 	}
 	public void setId(Integer id) {

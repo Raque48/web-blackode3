@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Spring eCommerce</title>
+  <title>V-Zone</title>
 
 
   <!-- Bootstrap core CSS -->
@@ -32,12 +32,12 @@
 
       <!-- Page Heading/Breadcrumbs -->
       <h1 class="mt-4 mb-3">
-        Spring eCommerce <small>Producto</small>
+        V-Zone | Videojuegos
       </h1>
 
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a th:href="@{/home}">Home</a></li>
-        <li class="breadcrumb-item active">Producto</li>
+        <li class="breadcrumb-item active">Videojuego</li>
       </ol>
 
       <!-- Blog Post -->
@@ -56,6 +56,9 @@
                 <input type="hidden" th:value="${product.price}" name="price">
 
                 <h2 class="card-title" th:text="${product.name}"></h2>
+                
+                <a th:href="@{https://www.youtube.com/watch?v=jwVmF38E85s}"
+					class="btn btn-danger" data-fancybox=""> Ver trailer </a>
 
                 <ul class="list-group">
                   <li class="list-group-item"><h5 th:text=" 'Precio : $'+ ${product.price}"></h5></li>

@@ -9,6 +9,8 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import jakarta.validation.constraints.NotBlank;
+
 @Data
 @AllArgsConstructor
 @ToString
@@ -92,7 +94,7 @@ public class Product {
 	public void setDateUpdated(LocalDateTime dateUpdated) {
 		this.dateUpdated = dateUpdated;
 	}
-
+	
 	public User getUser() {
 		return user;
 	}
@@ -104,7 +106,7 @@ public class Product {
 	@Override
 	public String toString() {
 		return "Product [id=" + id + ", code=" + code + ", name=" + name + ", description=" + description + ", image="
-				+ image + ", price=" + price + ", dateCreated=" + dateCreated + ", dateUpdated=" + dateUpdated
+				+ image + ", price=" + price + ", dateCreated=" + dateCreated + ", dateUpdated=" + dateUpdated 
 				+ ", user=" + user + "]";
 	}
     

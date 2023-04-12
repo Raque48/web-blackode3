@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Detalle</title>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+<div id="chart_div"></div>
+<script>
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+    ['Fecha Registro', 'Entrada/Unidades', 'Salida/Unidades'],
+    ['2022-01-01',  2,      1],
+    ['2022-02-01',  0,      3],
+    ['2022-03-01',  1,      1],
+    ['2022-04-01',  3,      2]
+  ]);
+
+  var options = {
+    title: 'Entrada y Salida de Unidades por Fecha',
+    curveType: 'function',
+    legend: { position: 'bottom' }
+  };
+
+  var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+
+  chart.draw(data, options);
+}
+</script>
+</body>
+</html>

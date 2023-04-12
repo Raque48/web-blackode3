@@ -1,8 +1,11 @@
 package com.icodeap.ecommerce.application.service;
 
+import org.springframework.stereotype.Service;
+
 import com.icodeap.ecommerce.application.repository.UserRepository;
 import com.icodeap.ecommerce.domain.User;
 
+@Service
 public class UserService {
     private final UserRepository userRepository;
 

@@ -2,6 +2,7 @@ package com.icodeap.ecommerce.infrastructure.controller;
 
 import com.icodeap.ecommerce.application.service.ProductService;
 import com.icodeap.ecommerce.application.service.StockService;
+import com.icodeap.ecommerce.domain.Product;
 import com.icodeap.ecommerce.domain.Stock;
 import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
@@ -9,23 +10,31 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
 @Controller
-@RequestMapping("/home")
 @Slf4j
+//@RequestMapping("/")
 public class HomeController {
     private final ProductService productService;
     private final StockService stockService;
+    
+    
+    @GetMapping("/")
+    public String mostrarIndex(Model model) {
+   		return"home";
+   	}
+
 
     public HomeController(ProductService productService, StockService stockService) {
         this.productService = productService;
         this.stockService = stockService;
     }
 
-    @GetMapping
+    @GetMapping("/home")
     public String home(Model model, HttpSession httpSession){
         model.addAttribute("products", productService.getProducts());
         try {
@@ -39,7 +48,7 @@ public class HomeController {
     @GetMapping("/product-detail/{id}")
     public String productDetail(@PathVariable Integer id, Model model, HttpSession httpSession){
         List<Stock> stocks = stockService.getStockByProduct(productService.getProductById(id));
-      //  log.info("Id product: {}", id);
+        //log.info("Id product: {}", id);
        // log.info("stock size: {}", stocks.size());
         Integer lastBalance = stocks.get(stocks.size()-1).getBalance();
 

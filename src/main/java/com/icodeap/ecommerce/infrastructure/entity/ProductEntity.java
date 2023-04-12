@@ -2,11 +2,14 @@ package com.icodeap.ecommerce.infrastructure.entity;
 
 import com.icodeap.ecommerce.domain.User;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+
+
 
 @Entity
 @Table(name = "products")
@@ -25,7 +28,7 @@ public class ProductEntity {
 
     private LocalDateTime dateCreated;
     private LocalDateTime dateUpdated;
-
+    
     @ManyToOne
     private UserEntity userEntity;
 

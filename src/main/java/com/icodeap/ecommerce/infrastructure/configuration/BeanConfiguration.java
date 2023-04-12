@@ -1,4 +1,4 @@
-package com.icodeap.ecommerce.infrastructure.configuration;
+/*package com.icodeap.ecommerce.infrastructure.configuration;
 
 import com.icodeap.ecommerce.application.repository.*;
 import com.icodeap.ecommerce.application.service.*;
@@ -65,4 +65,4 @@ public class BeanConfiguration {
         return  new LogoutService();
     }
 
-}
+}*/

@@ -38,7 +38,7 @@ public class CartController {
     @GetMapping("/get-cart")
     public String getCart(Model model, HttpSession httpSession){
         //log.info("id user desde la variable de session desde getCart: {}",httpSession.getAttribute("iduser").toString());
-     //   showCart();
+        //showCart();
         model.addAttribute("cart", cartService.getItemCarts());
         model.addAttribute("total",cartService.getTotalCart());
         model.addAttribute("id", httpSession.getAttribute("iduser").toString());

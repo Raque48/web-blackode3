@@ -1,9 +1,12 @@
 package com.icodeap.ecommerce.application.service;
 
+import org.springframework.stereotype.Service;
+
 import com.icodeap.ecommerce.domain.User;
 import com.icodeap.ecommerce.domain.UserType;
-import com.icodeap.ecommerce.infrastructure.dto.UserDto;
 
+
+@Service
 public class LoginService {
 	
 	
@@ -16,11 +19,11 @@ public class LoginService {
     //retorna true si encuentra el user
     public boolean existUser(String email){
         try {
-            User user = userService.findByEmail(email);
-        }catch(Exception e){
+        	userService.findByEmail(email);
+            return true;
+        } catch(Exception e){
             return false;
         }
-        return true;
     }
 
     //obtenemos el id del usuario

@@ -21,7 +21,8 @@ public class User {
     private String password;
     private UserType userType;
     private LocalDateTime dateCreated;
-	public Integer getId() {
+	
+    public Integer getId() {
 		return id;
 	}
 	public void setId(Integer id) {

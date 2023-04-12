@@ -6,11 +6,14 @@ import com.icodeap.ecommerce.domain.Product;
 import com.icodeap.ecommerce.domain.User;
 import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
+
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
 
+@Service
 @Slf4j
 public class ProductService {
 

@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Spring eCommerce</title>
+  <title>V-Zone</title>
 
 
   <!-- Bootstrap core CSS -->
@@ -30,15 +30,16 @@
 
   <!-- Page Heading/Breadcrumbs -->
   <h1 class="mt-4 mb-3">
-    Spring eCommerce <small>Inventario</small>
+    V-Zone | Inventario
   </h1>
 
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+    <li class="breadcrumb-item"><a th:href="@{/admin}">Home</a></li>
     <li class="breadcrumb-item active">Ver Inventario</li>
   </ol>
 
   <a class="btn btn-primary" th:href="@{/admin/products/stock/create-unit-product/{id}  (id = ${idproduct}) }" > Añadir unidades</a>
+  
   <h2>Inventario</h2>
   <table class="table">
     <thead>

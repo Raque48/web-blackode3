@@ -6,6 +6,9 @@ import com.icodeap.ecommerce.domain.OrderProduct;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class OrderProductService {
     private final OrderProductRepository orderProductRepository;
 

@@ -32,6 +32,17 @@ public class StockController {
         model.addAttribute("idproduct", id);
         return "admin/stock/show";
     }
+    
+    @GetMapping("/grafica/{id}")
+    public String grafica (@PathVariable Integer id, Model model){
+        Product product = new Product();
+        product.setId(id);
+        List<Stock> stocks = stockService.getStockByProduct(product);
+        model.addAttribute("stocks", stocks);
+        model.addAttribute("idproduct", id);
+        return "admin/stock/show1";
+    }
+    
 
     @GetMapping("/create-unit-product/{id}")
     public String create(@PathVariable Integer id, Model model){

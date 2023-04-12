@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Spring eCommerce</title>
+  <title>V-Zone</title>
 
 
   <!-- Bootstrap core CSS -->
@@ -30,16 +30,16 @@
 
   <!-- Page Heading/Breadcrumbs -->
   <h1 class="mt-4 mb-3">
-    Spring eCommerce <small>Productos</small>
+    V-Zone | Videojuegos 
   </h1>
 
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a th:href="@{/admin}">Home</a></li>
-    <li class="breadcrumb-item active">Ver Productos</li>
+    <li class="breadcrumb-item active">Ver Videojuegos</li>
   </ol>
 
-  <a class="btn btn-primary" th:href="@{/admin/products/create}" > Crear Producto</a>
-  <h2>Productos</h2>
+  <a class="btn btn-primary" th:href="@{/admin/products/create}" > Subir Videojuego</a>
+  <h2>Videojuegos</h2>
   <table class="table">
     <thead>
       <tr>
@@ -49,6 +49,7 @@
         <th scope="col">Editar</th>
         <th scope="col">Eliminar</th>
 		<th scope="col">Inventario</th>
+		<th scope="col">Gráfica</th>
       </tr>
     </thead>
     <tbody>
@@ -59,7 +60,8 @@
         <td><a  class="btn btn-warning" th:href="@{/admin/products/edit/{id} (id = ${product.id}) }">Editar</a> </td>
         <td><a  class="btn btn-danger" th:href="@{/admin/products/delete/{id} (id = ${product.id})  }">Eliminar</a> </td>
 		
-        <td><a  class="btn btn-danger" th:href="@{/admin/products/stock/{id} (id = ${product.id}) }">Inventario</a> </td>
+        <td><a class="btn btn-danger" th:href="@{/admin/products/stock/{id} (id = ${product.id}) }">Inventario</a> </td>
+        <td><a class="btn btn-danger" th:href="@{/admin/products/stock/grafica/{id} (id = ${product.id}) }">Gráfica</a></td>
       </tr>       
     </tbody>
   </table>

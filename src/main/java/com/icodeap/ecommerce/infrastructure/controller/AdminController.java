@@ -2,6 +2,7 @@ package com.icodeap.ecommerce.infrastructure.controller;
 
 import com.icodeap.ecommerce.application.service.ProductService;
 import com.icodeap.ecommerce.domain.Product;
+import com.icodeap.ecommerce.infrastructure.entity.ProductEntity;
 import com.icodeap.ecommerce.domain.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,7 +21,7 @@ public class AdminController {
     @GetMapping
     public String home(Model model){
         User user = new User();
-        user.setId(1);
+        user.setId(6);
         Iterable<Product> products = productService.getProductsByUser(user);
         model.addAttribute("products", products);
         return "admin/home";
