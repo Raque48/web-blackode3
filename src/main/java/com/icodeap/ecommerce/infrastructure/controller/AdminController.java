@@ -21,7 +21,7 @@ public class AdminController {
     @GetMapping
     public String home(Model model){
         User user = new User();
-        user.setId(6);
+        user.setId(1);
         Iterable<Product> products = productService.getProductsByUser(user);
         model.addAttribute("products", products);
         return "admin/home";
