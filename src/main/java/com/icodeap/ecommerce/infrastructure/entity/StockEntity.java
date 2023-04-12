@@ -10,7 +10,7 @@ import org.hibernate.annotations.OnDeleteAction;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "railway.stock")
+@Table(name = "stock")
 @NoArgsConstructor
 @Data
 public class StockEntity {
