@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 @Data
 public class UserDto {
     private String username;
+    //anotaciaon notblack tengo que tener informacion sino aviento mensaje
     @NotBlank (message = "Nombre es requerido")
     private String firstName;
     @NotBlank (message = "Apellido es requerido")
@@ -81,8 +82,11 @@ public class UserDto {
 	}
 
 	public User userDtoToUser(){
-        return new User(null,this.getEmail(),this.getFirstName(), this.getLastName(),this.getEmail(), this.getAddress(), this.getCellphone(), this.getPassword(), UserType.USER, LocalDateTime.now());
-    }
+		User usuario=new User();
+		 usuario.Inicializar(null,this.getEmail(),this.getFirstName(), this.getLastName(),this.getEmail(), this.getAddress(), this.getCellphone(), this.getPassword(), UserType.USER, LocalDateTime.now());
+    
+        return usuario;
+        		}
 
 	@Override
 	public String toString() {
