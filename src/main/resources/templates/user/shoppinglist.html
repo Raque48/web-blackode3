@@ -52,6 +52,8 @@
               <thead>
                 <tr>
                   <th scope="col">No. de Orden</th>
+                  <th scope="col">Nombre Usuario</th>
+                  <th scope="col">Correo</th>
                   <th scope="col">Fecha</th>
                   <th scope="col">Valor</th>
                 </tr>
@@ -59,6 +61,8 @@
               <tbody th:each="order:${orders}">
                 <tr>
                   <td th:text="${order.id}">4555454</td>
+                  <td th:text="${order.user.firstName} + ' ' + ${order.user.lastName}">Nombre</td>
+                  <td th:text="${order.user.email}">Correo</td>
                   <td th:text="${order.dateCreated}">Fecha de Compra</td>
                   <td th:text="${order.getTotalOrderPrice()}">Total</td>
                 </tr>
