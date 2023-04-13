@@ -45,6 +45,17 @@ public class ProductController {
         model.addAttribute("products", products);
         return "admin/products/show";
     }
+    
+     @GetMapping("/users")
+    public String usersProduct(Model model, HttpSession httpSession){
+     //   log.info("id user desde la variable de session: {}",httpSession.getAttribute("iduser").toString());
+
+        User user = new User();
+        user.setId(Integer.parseInt(httpSession.getAttribute("iduser").toString()));
+        Iterable<Product> products = productService.getProductsByUser(user);
+        model.addAttribute("products", products);
+        return "admin/products/users";
+    }
 
 
     @GetMapping("/edit/{id}")
