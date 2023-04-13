@@ -9,6 +9,9 @@ import java.util.List;
 @Data
 public class Order {
     private Integer id;
+    private String firstName;
+    private String lastName;
+    private String email;
     private LocalDateTime dateCreated;
     private List<OrderProduct> orderProducts;
     private User user;
@@ -26,6 +29,24 @@ public class Order {
 	}
 	public void setId(Integer id) {
 		this.id = id;
+	}
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public LocalDateTime getDateCreated() {
 		return dateCreated;
@@ -47,7 +68,7 @@ public class Order {
 	}
 	@Override
 	public String toString() {
-		return "Order [id=" + id + ", dateCreated=" + dateCreated + ", orderProducts=" + orderProducts + ", user="
+		return "Order [id=" + id + ",  firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ",dateCreated=" + dateCreated + ", orderProducts=" + orderProducts + ", user="
 				+ user + "]";
 	}
 
