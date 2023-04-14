@@ -68,7 +68,7 @@ public class listarOrdenPDF extends AbstractPdfView{
 }
 */
 
-import java.awt.Color;
+/*import java.awt.Color;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Map;
@@ -106,7 +106,6 @@ public class listarOrdenPDF extends AbstractPdfView{
 		List<Order> newListOrder = (List<Order>) model.get("orders");
 		
 		
-		/*Fuentes, tamaños y colores para cada seccion*/
 		Font fuenteTitulo = FontFactory.getFont(FontFactory.HELVETICA_BOLD,20,Color.BLUE);
 		Font fuenteTituloColumnas = FontFactory.getFont(FontFactory.HELVETICA_BOLD ,12,Color.BLUE);
 		Font fuenteDataCeldas = FontFactory.getFont(FontFactory.COURIER ,10,Color.BLACK);
@@ -115,8 +114,6 @@ public class listarOrdenPDF extends AbstractPdfView{
 		document.setMargins(-20, -20, 30, 20);
 		document.open();
 		PdfPCell celda = null;
-		
-		/*Tabla Para El Titulo del PDF*/
 		PdfPTable tablaTitulo = new PdfPTable(1);
 						
 		celda = new PdfPCell(new Phrase("LISTADO GENERAL DE ORDENES DE MIS ORDENES", fuenteTitulo));
@@ -128,8 +125,6 @@ public class listarOrdenPDF extends AbstractPdfView{
 		
 		tablaTitulo.addCell(celda);
 		tablaTitulo.setSpacingAfter(30);
-		
-		/*Tabla Para Mostrar Listado de Clientes*/
 		PdfPTable tablaOrders = new PdfPTable(5);
 		tablaOrders.setWidths(new float[] {1.5f, 2f, 1.5f, 3.5f,1.5f});		
 		
@@ -167,16 +162,7 @@ public class listarOrdenPDF extends AbstractPdfView{
 		celda.setVerticalAlignment(Element.ALIGN_CENTER);
 		celda.setPadding(10);
 		tablaOrders.addCell(celda);
-		
-		/*celda = new PdfPCell(new Phrase("CIUDAD", fuenteTituloColumnas));
-		celda.setBackgroundColor(Color.lightGray);
-		celda.setHorizontalAlignment(Element.ALIGN_CENTER);
-		celda.setVerticalAlignment(Element.ALIGN_CENTER);
-		celda.setPadding(10);
-		tablaClientes.addCell(celda);*/		
-		
-													
-		/*Bucle For, mostrar todos los datos de los clientes*/		
+			
 		
 		for (Order order : newListOrder) {
 			
@@ -219,7 +205,7 @@ public class listarOrdenPDF extends AbstractPdfView{
 				
 		}
 		
-		/*
+		
 		listadoClientes.forEach(cliente -> {												
 			tablaClientes.addCell(cliente.getId().toString());					
 			tablaClientes.addCell(cliente.getNombres());
@@ -228,12 +214,9 @@ public class listarOrdenPDF extends AbstractPdfView{
 			tablaClientes.addCell(cliente.getEmail());
 			tablaClientes.addCell(cliente.getCiudad().getCiudad());
 		});
-		*/
-		
-		/*Anexamos las Tablas al Documento*/
 		document.add(tablaTitulo);
 		document.add(tablaOrders);
 	}
 
-}
+}*/
 
