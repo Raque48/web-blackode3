@@ -22,7 +22,7 @@ import com.lowagie.text.pdf.PdfWriter;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@Component("user/shoppinglist")
+/*@Component("user/shoppinglist")
 public class listarOrdenPDF extends AbstractPdfView{
 
 	@Override
@@ -65,7 +65,7 @@ public class listarOrdenPDF extends AbstractPdfView{
 		document.add(tablaOrders);
 	}
 
-}
+}*/
 
 /*import java.awt.Color;
 import java.text.SimpleDateFormat;
@@ -91,7 +91,7 @@ import com.lowagie.text.pdf.PdfWriter;
 import com.icodeap.ecommerce.domain.Order;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatter;*/
 
 @Component("user/shoppinglist")
 public class listarOrdenPDF extends AbstractPdfView{
@@ -217,5 +217,5 @@ public class listarOrdenPDF extends AbstractPdfView{
 		document.add(tablaOrders);
 	}
 
-}*/
+}
 
