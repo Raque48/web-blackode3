@@ -48,10 +48,10 @@ public class Order {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public LocalDate getDateCreated() {
+	public LocalDateTime getDateCreated() {
 		return dateCreated;
 	}
-	public void setDateCreated(LocalDate dateCreated) {
+	public void setDateCreated(LocalDateTime dateCreated) {
 		this.dateCreated = dateCreated;
 	}
 	public List<OrderProduct> getOrderProducts() {
