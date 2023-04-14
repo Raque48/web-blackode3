@@ -130,8 +130,8 @@ public class listarOrdenPDF extends AbstractPdfView{
 		tablaTitulo.setSpacingAfter(30);
 		
 		/*Tabla Para Mostrar Listado de Clientes*/
-		PdfPTable tablaOrders = new PdfPTable(6);
-		tablaOrders.setWidths(new float[] {1.5f, 2f, 2f, 1.5f, 3.5f,1.5f});		
+		PdfPTable tablaOrders = new PdfPTable(5);
+		tablaOrders.setWidths(new float[] {1.5f, 2f, 1.5f, 3.5f,1.5f});		
 		
 		celda = new PdfPCell(new Phrase("No. DE ORDEN", fuenteTituloColumnas));
 		celda.setBackgroundColor(Color.lightGray);
@@ -141,13 +141,6 @@ public class listarOrdenPDF extends AbstractPdfView{
 		tablaOrders.addCell(celda);
 		
 		celda = new PdfPCell(new Phrase("Nombre de Usuario", fuenteTituloColumnas));
-		celda.setBackgroundColor(Color.lightGray);
-		celda.setHorizontalAlignment(Element.ALIGN_CENTER);
-		celda.setVerticalAlignment(Element.ALIGN_CENTER);
-		celda.setPadding(10);
-		tablaOrders.addCell(celda);
-		
-		celda = new PdfPCell(new Phrase("Apellido", fuenteTituloColumnas));
 		celda.setBackgroundColor(Color.lightGray);
 		celda.setHorizontalAlignment(Element.ALIGN_CENTER);
 		celda.setVerticalAlignment(Element.ALIGN_CENTER);
@@ -191,10 +184,6 @@ public class listarOrdenPDF extends AbstractPdfView{
 			tablaOrders.addCell(celda);
 			
 			celda = new PdfPCell(new Phrase(order.getFirstName(), fuenteDataCeldas));
-			celda.setPadding(5);
-			tablaOrders.addCell(celda);
-			
-			celda = new PdfPCell(new Phrase(order.getLastName(), fuenteDataCeldas));
 			celda.setPadding(5);
 			tablaOrders.addCell(celda);
 			
