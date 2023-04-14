@@ -14,7 +14,7 @@ public class Order {
     private String email;
     private LocalDateTime dateCreated;
     private List<OrderProduct> orderProducts;
-    private User user;
+    public User user;
 
     public void addOrdersProduct(List<OrderProduct> orderProducts){
         this.setOrderProducts(orderProducts);
