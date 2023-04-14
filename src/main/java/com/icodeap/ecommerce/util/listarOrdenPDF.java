@@ -195,7 +195,9 @@ public class listarOrdenPDF extends AbstractPdfView{
 			tablaOrders.addCell(order.user.getFirstName() + " " + order.user.getLastName());
 			tablaOrders.addCell(order.user.getEmail());
 			tablaOrders.addCell(order.getDateCreated().toString());
-			tablaOrders.addCell(order.getTotalOrderPrice());
+			
+			PdfPCell cell = new PdfPCell(new Phrase(order.getTotalOrderPrice().toString()));
+			tablaOrders.addCell(cell);
 			
 				
 		}
