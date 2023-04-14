@@ -39,8 +39,50 @@
         <li class="breadcrumb-item"><a th:href="@{/home}">Home</a></li>
         <li class="breadcrumb-item active">Videojuego</li>
       </ol>
-
+      
       <!-- Blog Post -->
+<div class="card mb-4">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-lg-6">
+        <a href="#"> <img class="img-fluid rounded"
+          th:src="@{/images/{img}  (img = ${product.image})} "  alt="">
+        </a>
+      </div>
+      <div class="col-lg-6">
+        <form th:action="@{/user/cart/add-product}" method="POST">
+          <input type="hidden" th:value="${product.id}" name="idProduct">
+          <input type="hidden" th:value="${product.name}" name="nameProduct">
+          <input type="hidden" th:value="${product.price}" name="price">
+
+          <h2 class="card-title" th:if="${stock > 0}" th:text="${product.name}"></h2>
+          <h2 th:if="${stock == 0}" class="text-danger">No disponible en este momento</h2>
+
+          <a th:href="@{https://www.youtube.com/watch?v=jwVmF38E85s}"
+            class="btn btn-danger" data-fancybox=""> Ver trailer </a>
+
+          <ul class="list-group">
+            <li class="list-group-item"><h5 th:text=" 'Precio : $'+ ${product.price}"></h5></li>
+            <li class="list-group-item"><h5 th:text=" 'Stock : '+ ${stock}+ ' unidades'"></h5></li>
+            <li class="list-group-item">
+              <p th:text="'Descripción: '+ ${product.description}"></p>
+            </li>
+            <li class="list-group-item"><h6>
+              Cantidad: <input type="number" id="quantity" name="quantity" autocomplete="off"
+              min="1" max="5" value="1">
+            </h6></li>
+          </ul>
+
+          <button type="submit" th:if="${stock > 0}" class="btn btn-dark">Añadir al carrito </button>
+          <button type="button" th:if="${stock == 0}" class="btn btn-danger" onclick="alert('Producto no disponible en este momento')">No hay Disponibles</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+      
+      <!-- Blog Post 
       <div class="card mb-4">
         <div class="card-body">
           <div class="row">
@@ -73,14 +115,14 @@
                 </ul>
 
 
-                <button type="submit" class="btn btn-dark" th:disabled="${stock == 0}">Añadir al carrito</button>
+               <button type="submit" class="btn btn-dark" th:disabled="${stock == 0}">Añadir al carrito</button>
 
               </form>
             </div>
           </div>
         </div>
       </div>
-
+-->
 
     </div>
     <!-- /.container -->
@@ -91,6 +133,18 @@
   <!-- Bootstrap core JavaScript -->
   <script th:src="@{/vendor/jquery/jquery.min.js}"></script>
   <script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+  <script>
+  $(document).ready(function() {
+    $('form').submit(function(event) {
+      var stock = parseInt($("#stock").text().replace(/\D/g,''));
+      if (stock === 0) {
+        var productId = $(this).find('input[name="idProduct"]').val();
+        alert("El producto con ID " + productId + " no está disponible en este momento.");
+        event.preventDefault(); // Evita que se envíe el formulario
+      }
+    });
+  });
+</script>
   </body>
 
   </html>
