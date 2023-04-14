@@ -163,21 +163,17 @@ public class listarOrdenPDF extends AbstractPdfView{
 		tablaOrders.addCell(celda);
 			
 		
-		/*for (Order order : newListOrder) {
+		for (Order order : newListOrder) {
 			
 				tablaOrders.addCell(String.valueOf(order.getId()));
-				tablaOrders.addCell(order.user.getFirstName() + " " + order.user.getLastName());
-				tablaOrders.addCell(order.user.getEmail());
-				tablaOrders.addCell(order.getDateCreated().toString());
+				//tablaOrders.addCell(order.user.getFirstName() + " " + order.user.getLastName());
+				//tablaOrders.addCell(order.user.getEmail());
+				//tablaOrders.addCell(order.getDateCreated().toString());
 				tablaOrders.addCell(String.valueOf(order.getTotalOrderPrice()));
 				
-		}*/
+		}
 		
-				tablaOrders.addCell(String.valueOf(order.getId()));
-				tablaOrders.addCell(order.user.getFirstName() + " " + order.user.getLastName());
-				tablaOrders.addCell(order.user.getEmail());
-				tablaOrders.addCell(order.getDateCreated().toString());
-				tablaOrders.addCell(String.valueOf(order.getTotalOrderPrice()));
+			
 		
 		
 		document.add(tablaTitulo);
