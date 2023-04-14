@@ -73,7 +73,7 @@
                 </ul>
 
 
-                <button type="submit"  class="btn btn-dark">Añadir al carrito </button>
+                <button type="submit" class="btn btn-dark" th:disabled="${stock == 0}">Añadir al carrito</button>
 
               </form>
             </div>
