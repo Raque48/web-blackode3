@@ -166,7 +166,7 @@ public class listarOrdenPDF extends AbstractPdfView{
 		
 		for (Order order : newListOrder) {
 			
-				celda = new PdfPCell(new Phrase(order.getId().toString(), fuenteDataCeldas));
+				/*celda = new PdfPCell(new Phrase(order.getId().toString(), fuenteDataCeldas));
 			celda.setPadding(5);
 			tablaOrders.addCell(celda);
 			
@@ -189,7 +189,14 @@ public class listarOrdenPDF extends AbstractPdfView{
 			String precioTotal = String.valueOf(order.getTotalOrderPrice());
 			celda = new PdfPCell(new Phrase(precioTotal, fuenteDataCeldas));
 			celda.setPadding(5);
-			tablaOrders.addCell(celda);
+			tablaOrders.addCell(celda);*/
+			
+			tabla.addCell(String.valueOf(order.getId()));
+			tabla.addCell(order.user.getFirstName() + " " + order.user.getLastName());
+			tabla.addCell(order.user.getEmail());
+			tabla.addCell(order.getDateCreated().toString());
+			tabla.addCell(order.getTotalOrderPrice());
+			
 				
 		}
 		
