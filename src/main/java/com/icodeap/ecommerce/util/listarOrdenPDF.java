@@ -1,6 +1,6 @@
 package com.icodeap.ecommerce.util;
 
-/*import java.awt.Color;
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -66,7 +66,6 @@ public class listarOrdenPDF extends AbstractPdfView{
 	}
 
 }
-*/
 
 /*import java.awt.Color;
 import java.text.SimpleDateFormat;
