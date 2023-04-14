@@ -165,54 +165,16 @@ public class listarOrdenPDF extends AbstractPdfView{
 		
 		for (Order order : newListOrder) {
 			
-			celda = new PdfPCell(new Phrase(order.getId().toString(), fuenteDataCeldas));
-			celda.setPadding(5);
-			tablaOrders.addCell(celda);
-			
-			celda = new PdfPCell(new Phrase(order.getFirstName(), fuenteDataCeldas));
-			celda.setPadding(5);
-			tablaOrders.addCell(celda);
-			
-			celda = new PdfPCell(new Phrase(order.getLastName(), fuenteDataCeldas));
-			celda.setPadding(5);
-			tablaOrders.addCell(celda);
-			
-			celda = new PdfPCell(new Phrase(order.getEmail(), fuenteDataCeldas));
-			celda.setPadding(5);
-			tablaOrders.addCell(celda);
-
-			LocalDateTime fechaCreada = order.getDateCreated(); // obtener fecha de creación
-		    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"); // crear formateador
-		    String fechaCreadaStr = fechaCreada.format(formatter); // convertir fecha a cadena formateada
-		    celda = new PdfPCell(new Phrase(fechaCreadaStr, fuenteDataCeldas));
-		    celda.setPadding(5);
-		    tablaOrders.addCell(celda);
-
-			
-			String precioTotal = String.valueOf(order.getTotalOrderPrice());
-			celda = new PdfPCell(new Phrase(precioTotal, fuenteDataCeldas));
-			celda.setPadding(5);
-			tablaOrders.addCell(celda);
-
-			celda = new PdfPCell(new Phrase(order.getDateCreated(), fuenteDataCeldas));
-			celda.setPadding(5);
-			tablaOrders.addCell(celda);
-			
-			celda = new PdfPCell(new Phrase(order.getTotalOrderPrice(), fuenteDataCeldas));
-			celda.setPadding(5);
-			tablaOrders.addCell(celda);
+				tablaOrders.addCell(String.valueOf(order.getId()));
+				tablaOrders.addCell(order.user.getFirstName() + " " + order.user.getLastName());
+				tablaOrders.addCell(order.user.getEmail());
+				tablaOrders.addCell(order.getDateCreated().toString());
+				tablaOrders.addCell(String.valueOf(order.getTotalOrderPrice()));
 				
 		}
 		
 		
-		listadoClientes.forEach(cliente -> {												
-			tablaClientes.addCell(cliente.getId().toString());					
-			tablaClientes.addCell(cliente.getNombres());
-			tablaClientes.addCell(cliente.getApellidos());
-			tablaClientes.addCell(cliente.getTelefono());
-			tablaClientes.addCell(cliente.getEmail());
-			tablaClientes.addCell(cliente.getCiudad().getCiudad());
-		});
+		
 		document.add(tablaTitulo);
 		document.add(tablaOrders);
 	}
