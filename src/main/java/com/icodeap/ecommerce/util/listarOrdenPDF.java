@@ -165,11 +165,30 @@ public class listarOrdenPDF extends AbstractPdfView{
 		
 		for (Order order : newListOrder) {
 			
-				tablaOrders.addCell(String.valueOf(order.getId()));
-				tablaOrders.addCell(String.valueOf(order.user.getFirstName() + " " + order.user.getLastName()));
-				tablaOrders.addCell(String.valueOf(order.user.getEmail()));
-				tablaOrders.addCell(String.valueOf(order.getDateCreated().toString()));
-				tablaOrders.addCell(String.valueOf(order.getTotalOrderPrice()));
+				celda = new PdfPCell(new Phrase(order.getId().toString(), fuenteDataCeldas));
+			celda.setPadding(5);
+			tablaOrders.addCell(celda);
+			
+			celda = new PdfPCell(new Phrase(order.user.getFirstName() + " " + order.user.getLastName(), fuenteDataCeldas));
+			celda.setPadding(5);
+			tablaOrders.addCell(celda);
+			
+			celda = new PdfPCell(new Phrase(order.user.getEmail(), fuenteDataCeldas));
+			celda.setPadding(5);
+			tablaOrders.addCell(celda);
+
+			LocalDateTime fechaCreada = order.getDateCreated(); // obtener fecha de creación
+		    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"); // crear formateador
+		    String fechaCreadaStr = fechaCreada.format(formatter); // convertir fecha a cadena formateada
+		    celda = new PdfPCell(new Phrase(fechaCreadaStr, fuenteDataCeldas));
+		    celda.setPadding(5);
+		    tablaOrders.addCell(celda);
+
+			
+			String precioTotal = String.valueOf(order.getTotalOrderPrice());
+			celda = new PdfPCell(new Phrase(precioTotal, fuenteDataCeldas));
+			celda.setPadding(5);
+			tablaOrders.addCell(celda);
 				
 		}
 		
