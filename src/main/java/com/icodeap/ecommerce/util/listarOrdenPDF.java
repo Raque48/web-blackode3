@@ -176,7 +176,7 @@ public class listarOrdenPDF extends AbstractPdfView{
 		
 		
 		document.add(tablaTitulo);
-		//document.add(tablaOrders);
+		document.add(tablaOrders);
 	}
 
 }
