@@ -90,6 +90,7 @@ import com.lowagie.text.pdf.PdfPCell;
 import com.lowagie.text.pdf.PdfPTable;
 import com.lowagie.text.pdf.PdfWriter;
 import com.icodeap.ecommerce.domain.Order;
+import com.icodeap.ecommerce.domain.User;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -179,7 +180,7 @@ public class listarOrdenPDF extends AbstractPdfView{
 		/*Bucle For, mostrar todos los datos de los clientes*/		
 		
 		for (Order order : newListOrder) {
-			celda = new PdfPCell(new Phrase(order.getId().toString(), fuenteDataCeldas));
+			/*celda = new PdfPCell(new Phrase(order.getId().toString(), fuenteDataCeldas));
 			celda.setPadding(5);
 			tablaOrders.addCell(celda);
 			
@@ -187,10 +188,14 @@ public class listarOrdenPDF extends AbstractPdfView{
 			celda.setPadding(5);
 			tablaOrders.addCell(celda);
 			
-			celda = new PdfPCell(new Phrase(order.getEmail(), fuenteDataCeldas));
+			celda = new PdfPCell(new Phrase(order.getLastName(), fuenteDataCeldas));
 			celda.setPadding(5);
 			tablaOrders.addCell(celda);
 			
+			celda = new PdfPCell(new Phrase(order.getEmail(), fuenteDataCeldas));
+			celda.setPadding(5);
+			tablaOrders.addCell(celda);
+
 			LocalDateTime fechaCreada = order.getDateCreated(); // obtener fecha de creación
 		    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"); // crear formateador
 		    String fechaCreadaStr = fechaCreada.format(formatter); // convertir fecha a cadena formateada
@@ -212,6 +217,12 @@ public class listarOrdenPDF extends AbstractPdfView{
 			celda.setPadding(5);
 			tablaOrders.addCell(celda);*/
 			
+				tablaOrders.addCell(String.valueOf(order.getId()));
+				tablaOrders.addCell(order.user.getFirstName() + " " + order.user.getLastName());
+				tablaOrders.addCell(order.user.getEmail());
+				tablaOrders.addCell(order.getDateCreated().toString());
+				tablaOrders.addCell(String.valueOf(order.getTotalOrderPrice()));
+				
 		}
 		
 		/*
