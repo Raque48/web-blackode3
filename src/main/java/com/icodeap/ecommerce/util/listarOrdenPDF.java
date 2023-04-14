@@ -90,7 +90,6 @@ import com.lowagie.text.pdf.PdfPCell;
 import com.lowagie.text.pdf.PdfPTable;
 import com.lowagie.text.pdf.PdfWriter;
 import com.icodeap.ecommerce.domain.Order;
-import com.icodeap.ecommerce.domain.User;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
