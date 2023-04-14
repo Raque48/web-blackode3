@@ -12,7 +12,7 @@ public class Order {
     private String firstName;
     private String lastName;
     private String email;
-    private LocalDate dateCreated;
+    private LocalDateTime dateCreated;
     private List<OrderProduct> orderProducts;
     public User user;
 
