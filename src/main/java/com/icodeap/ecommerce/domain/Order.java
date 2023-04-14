@@ -12,7 +12,7 @@ public class Order {
     private String firstName;
     private String lastName;
     private String email;
-    private LocalDateTime dateCreated;
+    private LocalDate dateCreated;
     private List<OrderProduct> orderProducts;
     public User user;
 
@@ -48,10 +48,10 @@ public class Order {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public LocalDateTime getDateCreated() {
+	public LocalDate getDateCreated() {
 		return dateCreated;
 	}
-	public void setDateCreated(LocalDateTime dateCreated) {
+	public void setDateCreated(LocalDate dateCreated) {
 		this.dateCreated = dateCreated;
 	}
 	public List<OrderProduct> getOrderProducts() {
