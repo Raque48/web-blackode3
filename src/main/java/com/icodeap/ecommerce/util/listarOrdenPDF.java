@@ -163,7 +163,7 @@ public class listarOrdenPDF extends AbstractPdfView{
 		tablaOrders.addCell(celda);
 			
 		
-		for (Order order : newListOrder) {
+		/*for (Order order : newListOrder) {
 			
 				tablaOrders.addCell(String.valueOf(order.getId()));
 				tablaOrders.addCell(order.user.getFirstName() + " " + order.user.getLastName());
@@ -171,12 +171,12 @@ public class listarOrdenPDF extends AbstractPdfView{
 				tablaOrders.addCell(order.getDateCreated().toString());
 				tablaOrders.addCell(String.valueOf(order.getTotalOrderPrice()));
 				
-		}
+		}*/
 		
 		
 		
 		document.add(tablaTitulo);
-		document.add(tablaOrders);
+		//document.add(tablaOrders);
 	}
 
 }
