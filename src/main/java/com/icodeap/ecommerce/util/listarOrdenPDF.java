@@ -103,7 +103,6 @@ public class listarOrdenPDF extends AbstractPdfView{
 		
 		@SuppressWarnings("unchecked")
 		List<Order> newListOrder = (List<Order>) model.get("orders");
-		List<User> newListOrder = (List<User>) model.get("users");
 		
 		
 		
@@ -171,8 +170,6 @@ public class listarOrdenPDF extends AbstractPdfView{
 			celda.setPadding(5);
 			tablaOrders.addCell(celda);
 			
-			for(User user : newListOrder){
-			
 			celda = new PdfPCell(new Phrase(order.user.getFirstName() + " " + order.user.getLastName(), fuenteDataCeldas));
 			celda.setPadding(5);
 			tablaOrders.addCell(celda);
@@ -181,8 +178,6 @@ public class listarOrdenPDF extends AbstractPdfView{
 			celda.setPadding(5);
 			tablaOrders.addCell(celda);
 	
-				
-			}
 			LocalDateTime fechaCreada = order.getDateCreated(); // obtener fecha de creación
 		    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"); // crear formateador
 		    String fechaCreadaStr = fechaCreada.format(formatter); // convertir fecha a cadena formateada
