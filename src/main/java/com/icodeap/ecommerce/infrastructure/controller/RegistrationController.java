@@ -44,7 +44,7 @@ public class RegistrationController {
         }
         registrationService.register(userDto.userDtoToUser());
         redirectAttributes.addFlashAttribute("success", "Usuario creado correctamente");
-        return "redirect:/register";
+        return "redirect:/login";
     }
 
 }
